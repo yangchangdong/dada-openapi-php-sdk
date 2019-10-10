@@ -6,6 +6,7 @@
   2. 通过composer安装SDK
   3. 可台在Config配置类，中配置key和Secret。也可以初始化时重新设置
   4. 使用sdk提供的接口进行开发调试
+  5. 一些新的功能待开发中
 
 
 ### 安装
@@ -66,6 +67,18 @@ php thinkphp 使用方法
         }
     }
 ```
+
+### 测试信息
+````
+object(DadaOpenApi\Protocol\DadaResponse)#38 (4) {
+  ["status"] => string(4) "fail"
+  ["code"] => int(2105)
+  ["msg"] => string(50) "订单已下发,如要重发,请使用重发接口"
+  ["result"] => NULL
+}
+{"status":"fail","code":2105,"msg":"\u8ba2\u5355\u5df2\u4e0b\u53d1,\u5982\u8981\u91cd\u53d1,\u8bf7\u4f7f\u7528\u91cd\u53d1\u63a5\u53e3","result":null}
+
+````
 
 ### 感谢
 ```$xslt
