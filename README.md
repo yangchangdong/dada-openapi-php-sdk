@@ -4,41 +4,77 @@
 
   1. PHP version >= 5.4 & curl extension support
   2. 通过composer安装SDK
-  3. 创建Config配置类，填入key，secret和sandbox参数
+  3. 可台在Config配置类，中配置key和Secret。也可以初始化时重新设置
   4. 使用sdk提供的接口进行开发调试
 
 
 ### 安装
 
 ```
-php composer require yangchangdong/dada-openapi-php-sdk
+php 安装方法
+composer require yangchangdong/dada-openapi-php-sdk dev-master
 
 ```
 
 ### 基本用法
 
 ```
-php
-    use MtOpenApi\Config\Config;
-    use MtOpenApi\Api\ShopService;
-
-    //实例化一个配置类
-    $config = new Config($app_key, $app_secret, false);
-
-    //使用config和token对象，实例化一个服务对象
-    $shop_service = new ShopService($token, $config);
-
-    //调用服务方法，获取资源
-    $shop = $shop_service->->get_shop_ids();
+php thinkphp 使用方法
+    /**
+     * @author yangchangdong
+     * Date 2019/10/10
+     */
+    namespace app\index\controller;
+    
+    use DadaOpenApi\Api\OrderAddApi;
+    use DadaOpenApi\Config\Config;
+    use DadaOpenApi\Model\OrderModel;
+    use DadaOpenApi\Protocol\DadaRequestClient;
+    
+    class Dada
+    {
+    
+        public function index()
+        {
+            $config = new Config(0,false);
+            $config->setAppKey('*****');
+            $config->setAppSecret('****');
+    
+            $orderModel = new OrderModel();
+            $orderModel->setShopNo('11047059');	            // 第三方门店编号
+            $orderModel->setOriginId('123456789123');		// 第三方订单号
+            $orderModel->setCityCode('CN11');				// 城市code(可以参照城市code接口)
+            $orderModel->setCargoPrice(10);
+            $orderModel->setIsPrepay(0);
+            $orderModel->setReceiverName('张三');
+            $orderModel->setReceiverAddress('北京市大兴区');
+            $orderModel->setReceiverLat(39.917581);
+            $orderModel->setReceiverLng(116.529304);
+            $orderModel->setReceiverPhone('13800138000');
+            $orderModel->setCallback('local.dada.com/index.php/index/dada/callback');
+            $addOrderApi = new OrderAddApi(json_encode($orderModel));
+    
+            $dada_client = new DadaRequestClient($config, $addOrderApi);
+            $resp = $dada_client->makeRequest();
+            dump($resp);
+            echo json_encode($resp);
+        }
+    
+        public function callback()
+        {
+            return json(['message'=>'ok']);
+        }
+    }
 ```
 
 ### 感谢
 ```$xslt
-ddxq/mt-openapi-php-sdk 提供的初始代码，在其上进行了一些修改
+由达达提供的初始代码，在其上进行了一些二次开发，使用能够直接在thinkphp laravel 中直接使用。
+并且能够通过setAppKey设置不同的AppKey和AppSecret
 ```
 
 ### 变更记录
 ```$xslt
-1、请求地址由http 改为https
-2、增加了部分接口
+1、使用命名空间
+
 ```

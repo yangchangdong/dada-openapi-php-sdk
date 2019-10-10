@@ -12,7 +12,7 @@ namespace DadaOpenApi\Protocol;
 use DadaOpenApi\Config\DadaConstant;
 
 class DadaRequestClient{
-    
+
     /**
      * http request timeout;
      */
@@ -86,7 +86,7 @@ class DadaRequestClient{
 
         return $sign;
     }
-    
+
 
     /**
      * 发送请求,POST
@@ -137,7 +137,7 @@ class DadaRequestClient{
             $resp->setStatus($data['status']);
             $resp->setMsg($data['msg']);
             $resp->setCode($data['code']);
-            $resp->setResult($data['result']);
+            $resp->setResult(isset($data['result'])?$data['result']:null);
         }
         return $resp;
     }

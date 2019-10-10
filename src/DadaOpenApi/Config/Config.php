@@ -11,7 +11,7 @@ namespace DadaOpenApi\Config;
  * config 配置项
  */
 class Config{
-    
+
     /**
      * 达达开发者app_key
      */
@@ -41,6 +41,7 @@ class Config{
      * host
      */
     public $host;
+
 
 
     /**
@@ -79,4 +80,54 @@ class Config{
     public function getHost(){
         return $this->host;
     }
+
+    /**
+     * @param mixed $app_key
+     */
+    public function setAppKey($app_key)
+    {
+        $this->app_key = $app_key;
+    }
+
+    /**
+     * @param mixed $app_secret
+     */
+    public function setAppSecret($app_secret)
+    {
+        $this->app_secret = $app_secret;
+    }
+
+    /**
+     * @param mixed $v
+     */
+    public function setV($v)
+    {
+        $this->v = $v;
+    }
+
+    /**
+     * @param mixed $format
+     */
+    public function setFormat($format)
+    {
+        $this->format = $format;
+    }
+
+    /**
+     * @param mixed $source_id
+     */
+    public function setSourceId($source_id)
+    {
+        $this->source_id = $source_id;
+    }
+
+    /**
+     * @param mixed $host
+     */
+    public function setHost($host)
+    {
+        $this->host = $host;
+    }
+
+
 }
