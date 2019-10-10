@@ -89,5 +89,6 @@ object(DadaOpenApi\Protocol\DadaResponse)#38 (4) {
 ### 变更记录
 ```$xslt
 1、使用命名空间
+2、。。。。。。。。。
 
 ```
