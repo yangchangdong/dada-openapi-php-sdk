@@ -11,8 +11,8 @@
 ### 安装
 
 ```
-php
-    composer require yangchangdong/mt-openapi-php-sdk
+php composer require yangchangdong/data-openapi-php-sdk
+
 ```
 
 ### 基本用法
