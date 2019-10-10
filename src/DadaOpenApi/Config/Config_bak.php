@@ -4,7 +4,7 @@ namespace MtOpenApi\Config;
 
 use Exception;
 
-class Config
+class ConfigBak
 {
     private $app_key;
     private $app_secret;

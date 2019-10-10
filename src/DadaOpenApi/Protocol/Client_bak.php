@@ -1,14 +1,14 @@
 <?php
-namespace MtOpenApi\Protocol;
+namespace DadaOpenApi\Protocol;
 use Exception;
 use MtOpenApi\Api\RequestService;
-use MtOpenApi\Config\Config;
+use MtOpenApi\Config\ConfigBak;
 use stdClass;
 
 /**
  * Class Client
  */
-class Client
+class ClientBak
 {
 	public $app_id;
 	public $app_key;
@@ -20,7 +20,7 @@ class Client
 	protected $readTimeout 		= 60000;
 
 
-    public function __construct($token, Config $config)
+    public function __construct($token, ConfigBak $config)
     {
         $this->app_key = $config->get_app_key();
         $this->app_secret = $config->get_app_secret();

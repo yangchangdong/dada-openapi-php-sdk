@@ -3,7 +3,7 @@
 namespace MtOpenApi\Api;
 
 use Exception;
-use MtOpenApi\Config\Config;
+use MtOpenApi\Config\ConfigBak;
 use MtOpenApi\Protocol\Client;
 
 class RequestService
@@ -18,7 +18,7 @@ class RequestService
     protected $method='';
     protected $rows_num = "50";
 
-    public function __construct($token,Config $config)
+    public function __construct($token, ConfigBak $config)
     {
         $this->client = new Client($token, $config);
     }
