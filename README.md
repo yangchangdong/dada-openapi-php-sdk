@@ -90,6 +90,5 @@ object(DadaOpenApi\Protocol\DadaResponse)#38 (4) {
 ```$xslt
 1、使用命名空间
 2、v1.0.0
-3、是否可以增加新的版本了
 
 ```

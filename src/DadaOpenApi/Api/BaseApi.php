@@ -34,4 +34,23 @@ class BaseApi{
     public function getBusinessParams(){
         return $this->businessParams;
     }
+
+    /**
+     * @param mixed $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
+
+    /**
+     * @param mixed $businessParams
+     */
+    public function setBusinessParams($businessParams)
+    {
+        $this->businessParams = $businessParams;
+    }
+
+    
+
 }

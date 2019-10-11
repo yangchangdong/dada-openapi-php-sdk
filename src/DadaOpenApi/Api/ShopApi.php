@@ -9,7 +9,7 @@ namespace DadaOpenApi\Api;
 
 use DadaOpenApi\Config\UrlConfig;
 
-class ShopAddApi extends BaseApi{
+class ShopApi extends BaseApi{
     
     public function __construct($params) {
         parent::__construct(UrlConfig::SHOP_ADD_URL, $params);
